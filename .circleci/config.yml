@@ -1,0 +1,20 @@
+version: 2.0
+
+jobs:
+    build:
+        docker:
+            - image: circleci/python
+        working_directory: ~/mkdocs-sr-demo
+        steps:
+            - checkout
+            - restore_cache:
+                key: cache-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
+            - run: pipenv install --dev
+            - save_cache:
+                key: cache-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
+                paths:
+                    - "/home/circleci/.local/share/virtualenvs"
+            - run: pipenv run build
+            - deploy:
+                name: Deploy to Github Pages
+                command: ./.circleci/deploy.sh
