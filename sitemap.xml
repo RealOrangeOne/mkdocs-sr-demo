@@ -156,17 +156,17 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://realorangeone.github.io/mkdocs-sr-demo/programming/sr/servos/</loc>
+     <lastmod>2019-01-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://realorangeone.github.io/mkdocs-sr-demo/programming/sr/ruggeduinos/</loc>
      <lastmod>2019-01-03</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://realorangeone.github.io/mkdocs-sr-demo/programming/sr/ruggeduinos/custom_firmware/</loc>
-     <lastmod>2019-01-03</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://realorangeone.github.io/mkdocs-sr-demo/programming/sr/servos/</loc>
      <lastmod>2019-01-03</lastmod>
      <changefreq>daily</changefreq>
     </url>
