@@ -1,4 +1,5 @@
 site_name: SR Competition Docs
+site_url: https://realorangeone.github.io/mkdocs-sr-demo/
 repo_url: https://github.com/RealOrangeOne/mkdocs-sr-demo
 strict: true
 edit_uri: blob/master/docs/
