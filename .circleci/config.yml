@@ -30,6 +30,8 @@ jobs:
             - checkout
             - attach_workspace:
                 at: .
+            - restore_cache:
+                key: cache-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
             - deploy:
                 name: Deploy to Github Pages
                 command: ./.circleci/deploy.sh
