@@ -30,7 +30,6 @@ jobs:
             - checkout
             - attach_workspace:
                 at: .
-            - run: sudo apt install rsync --yes
             - deploy:
                 name: Deploy to Github Pages
                 command: ./.circleci/deploy.sh

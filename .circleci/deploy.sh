@@ -8,11 +8,4 @@ git config --global push.default simple
 git config --global user.email $(git --no-pager show -s --format='%ae' HEAD)
 git config --global user.name $CIRCLE_USERNAME
 
-git clone -q --branch=gh-pages $CIRCLE_REPOSITORY_URL $DEPLOY_DIR
-
-cd $DEPLOY_DIR
-rsync -arv --delete ../site/* .
-
-git add -f .
-git commit -m "Deploy build $CIRCLE_BUILD_NUM [ci skip]" || true
-git push -f
+pipenv run mkdocs gh-deploy --verbose -m "Deploy build $CIRCLE_BUILD_NUM [ci skip]"
