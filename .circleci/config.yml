@@ -27,6 +27,7 @@ jobs:
             - add_ssh_keys:
                 fingerprints:
                     - "a1:c7:35:0b:fc:48:19:98:3e:2d:44:08:dd:32:b1:60"
+            - checkout
             - attach_workspace:
                 at: .
             - run: sudo apt install rsync --yes
