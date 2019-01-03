@@ -8,4 +8,4 @@ git config --global push.default simple
 git config --global user.email $(git --no-pager show -s --format='%ae' HEAD)
 git config --global user.name $CIRCLE_USERNAME
 
-pipenv run mkdocs gh-deploy --verbose -m "Deploy build $CIRCLE_BUILD_NUM [ci skip]"
+pipenv run mkdocs gh-deploy --verbose -m "Deploy build $CIRCLE_BUILD_NUM [ci skip]" -m "$CIRCLE_COMPARE_URL"
