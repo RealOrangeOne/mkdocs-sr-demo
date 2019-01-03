@@ -126,6 +126,46 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://realorangeone.github.io/mkdocs-sr-demo/programming/SR/</loc>
+     <lastmod>2019-01-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://realorangeone.github.io/mkdocs-sr-demo/programming/SR/motors/</loc>
+     <lastmod>2019-01-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://realorangeone.github.io/mkdocs-sr-demo/programming/SR/power/</loc>
+     <lastmod>2019-01-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://realorangeone.github.io/mkdocs-sr-demo/programming/SR/servos/</loc>
+     <lastmod>2019-01-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://realorangeone.github.io/mkdocs-sr-demo/programming/SR/ruggeduinos/</loc>
+     <lastmod>2019-01-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://realorangeone.github.io/mkdocs-sr-demo/programming/SR/ruggeduinos/custom_firmware/</loc>
+     <lastmod>2019-01-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://realorangeone.github.io/mkdocs-sr-demo/programming/SR/vision/</loc>
+     <lastmod>2019-01-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://realorangeone.github.io/mkdocs-sr-demo/programming/SR/vision/markers/</loc>
+     <lastmod>2019-01-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://realorangeone.github.io/mkdocs-sr-demo/programming/python/</loc>
      <lastmod>2019-01-03</lastmod>
      <changefreq>daily</changefreq>
@@ -137,46 +177,6 @@
     </url>
     <url>
      <loc>https://realorangeone.github.io/mkdocs-sr-demo/programming/python/libraries/</loc>
-     <lastmod>2019-01-03</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://realorangeone.github.io/mkdocs-sr-demo/programming/sr/</loc>
-     <lastmod>2019-01-03</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://realorangeone.github.io/mkdocs-sr-demo/programming/sr/motors/</loc>
-     <lastmod>2019-01-03</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://realorangeone.github.io/mkdocs-sr-demo/programming/sr/power/</loc>
-     <lastmod>2019-01-03</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://realorangeone.github.io/mkdocs-sr-demo/programming/sr/servos/</loc>
-     <lastmod>2019-01-03</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://realorangeone.github.io/mkdocs-sr-demo/programming/sr/ruggeduinos/</loc>
-     <lastmod>2019-01-03</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://realorangeone.github.io/mkdocs-sr-demo/programming/sr/ruggeduinos/custom_firmware/</loc>
-     <lastmod>2019-01-03</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://realorangeone.github.io/mkdocs-sr-demo/programming/sr/vision/</loc>
-     <lastmod>2019-01-03</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://realorangeone.github.io/mkdocs-sr-demo/programming/sr/vision/markers/</loc>
      <lastmod>2019-01-03</lastmod>
      <changefreq>daily</changefreq>
     </url>
