@@ -1,5 +1,6 @@
 # Page 1
 
-```
-{!test_file.yml!}
-```
+??? danger
+    ```
+    {!test_file.yml!}
+    ```
