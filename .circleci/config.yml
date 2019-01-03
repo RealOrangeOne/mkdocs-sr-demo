@@ -15,6 +15,7 @@ jobs:
                 paths:
                     - "/home/circleci/.local/share/virtualenvs"
             - run: pipenv run build
+            - run: pipenv run lint-yaml
 
     deploy:
         docker:
