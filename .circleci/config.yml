@@ -6,9 +6,7 @@ jobs:
             - image: circleci/python
         steps:
             - checkout
-            - add_ssh_keys:
-                fingerprints:
-                    - "a1:c7:35:0b:fc:48:19:98:3e:2d:44:08:dd:32:b1:60"
+
             - restore_cache:
                 key: cache-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
             - run: pipenv install --dev
@@ -17,7 +15,30 @@ jobs:
                 paths:
                     - "/home/circleci/.local/share/virtualenvs"
             - run: pipenv run build
+            - persist_to_workspace:
+                root: .
+                paths:
+                    - site/
+
+    deploy:
+        docker:
+            - image: circleci/python
+        steps:
+            - add_ssh_keys:
+                fingerprints:
+                    - "a1:c7:35:0b:fc:48:19:98:3e:2d:44:08:dd:32:b1:60"
+            - attach_workspace:
+                at: .
             - run: sudo apt install rsync --yes
             - deploy:
                 name: Deploy to Github Pages
                 command: ./.circleci/deploy.sh
+
+workflows:
+    version: 2
+    build-and-deploy:
+        jobs:
+            - build
+            - deploy:
+                requires:
+                    - build
