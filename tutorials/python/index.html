@@ -1,0 +1,2414 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+        <link rel="canonical" href="https://realorangeone.github.io/mkdocs-sr-demo/tutorials/python/">
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.2.0">
+    
+    
+      
+        <title>Python: A whirlwind tour</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.572ca0f0.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.22915126.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#2196f3">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.8c900955.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#python-a-whirlwind-tour" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://realorangeone.github.io/mkdocs-sr-demo/" title="SR Competition Docs" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                SR Competition Docs
+              </span>
+              <span class="md-header-nav__topic">
+                Python: A whirlwind tour
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/RealOrangeOne/mkdocs-sr-demo/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../.." title="Some Documentation page" class="md-tabs__link">
+        Some Documentation page
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../IDE/" title="IDE" class="md-tabs__link">
+          IDE
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../kit/" title="Kit" class="md-tabs__link">
+          Kit
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../programming/" title="Programming" class="md-tabs__link">
+          Programming
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../rules/" title="Rules" class="md-tabs__link">
+          Rules
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../team_admin/" title="Team admin" class="md-tabs__link">
+          Team admin
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../troubleshooting/" title="Troubleshooting" class="md-tabs__link">
+          Troubleshooting
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../" title="Tutorials" class="md-tabs__link md-tabs__link--active">
+          Tutorials
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://realorangeone.github.io/mkdocs-sr-demo/" title="SR Competition Docs" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    SR Competition Docs
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/RealOrangeOne/mkdocs-sr-demo/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Some Documentation page" class="md-nav__link">
+      Some Documentation page
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../page_1/" title="Page 1" class="md-nav__link">
+      Page 1
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      IDE
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        IDE
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../IDE/" title="IDE" class="md-nav__link">
+      IDE
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../IDE/code_checking/" title="Code Checking" class="md-nav__link">
+      Code Checking
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../IDE/creating_a_project/" title="Creating a Project" class="md-nav__link">
+      Creating a Project
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../IDE/finding_things/" title="Finding things in the IDE" class="md-nav__link">
+      Finding things in the IDE
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../IDE/getting_code_on_the_robot/" title="Getting Code on the Robot" class="md-nav__link">
+      Getting Code on the Robot
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../IDE/good_commit_messages/" title="Writing Good Commit Messages" class="md-nav__link">
+      Writing Good Commit Messages
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../IDE/shortcuts_menu/" title="The shortcuts menu in the IDE" class="md-nav__link">
+      The shortcuts menu in the IDE
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../IDE/user_settings/" title="User configurable settings in the IDE" class="md-nav__link">
+      User configurable settings in the IDE
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../IDE/version_control/" title="Version Control in the IDE" class="md-nav__link">
+      Version Control in the IDE
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Kit
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Kit
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../kit/" title="Kit" class="md-nav__link">
+      Kit
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../kit/assembly/" title="Kit Assembly" class="md-nav__link">
+      Kit Assembly
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../kit/brain_board/" title="Brain Board" class="md-nav__link">
+      Brain Board
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../kit/motor_board/" title="Motor Board" class="md-nav__link">
+      Motor Board
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../kit/power_board/" title="Power Board" class="md-nav__link">
+      Power Board
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../kit/ruggeduino/" title="Ruggeduino" class="md-nav__link">
+      Ruggeduino
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../kit/servo_board/" title="Servo Board" class="md-nav__link">
+      Servo Board
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../kit/wifi/" title="WiFi" class="md-nav__link">
+      WiFi
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-9" type="checkbox" id="nav-4-9">
+    
+    <label class="md-nav__link" for="nav-4-9">
+      Batteries
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-9">
+        Batteries
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../kit/batteries/" title="Batteries and Charging" class="md-nav__link">
+      Batteries and Charging
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../kit/batteries/hke4_charger/" title="The HobbyKing HKE4 Charger" class="md-nav__link">
+      The HobbyKing HKE4 Charger
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../kit/batteries/imax_b6_charger/" title="The iMAX B6 Charger" class="md-nav__link">
+      The iMAX B6 Charger
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Programming
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Programming
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../programming/" title="Programming" class="md-nav__link">
+      Programming
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../programming/git_repositories/" title="Git Repositories" class="md-nav__link">
+      Git Repositories
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../programming/simulator/" title="Simulator" class="md-nav__link">
+      Simulator
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-4" type="checkbox" id="nav-5-4">
+    
+    <label class="md-nav__link" for="nav-5-4">
+      Python
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-4">
+        Python
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../programming/python/" title="Python" class="md-nav__link">
+      Python
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../programming/python/functions/" title="Writing your own functions" class="md-nav__link">
+      Writing your own functions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../programming/python/libraries/" title="Included Python Libraries" class="md-nav__link">
+      Included Python Libraries
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-5" type="checkbox" id="nav-5-5">
+    
+    <label class="md-nav__link" for="nav-5-5">
+      Sr
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-5">
+        Sr
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../programming/sr/" title="SR Module" class="md-nav__link">
+      SR Module
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-5-2" type="checkbox" id="nav-5-5-2">
+    
+    <label class="md-nav__link" for="nav-5-5-2">
+      Motors
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-5-5-2">
+        Motors
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../programming/sr/motors/" title="Motors" class="md-nav__link">
+      Motors
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-5-3" type="checkbox" id="nav-5-5-3">
+    
+    <label class="md-nav__link" for="nav-5-5-3">
+      Power
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-5-5-3">
+        Power
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../programming/sr/power/" title="Power" class="md-nav__link">
+      Power
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-5-4" type="checkbox" id="nav-5-5-4">
+    
+    <label class="md-nav__link" for="nav-5-5-4">
+      Ruggeduinos
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-5-5-4">
+        Ruggeduinos
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../programming/sr/ruggeduinos/" title="IO (Ruggeduino)" class="md-nav__link">
+      IO (Ruggeduino)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../programming/sr/ruggeduinos/custom_firmware/" title="Ruggeduino custom firmware" class="md-nav__link">
+      Ruggeduino custom firmware
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-5-5" type="checkbox" id="nav-5-5-5">
+    
+    <label class="md-nav__link" for="nav-5-5-5">
+      Servos
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-5-5-5">
+        Servos
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../programming/sr/servos/" title="Servos" class="md-nav__link">
+      Servos
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-5-6" type="checkbox" id="nav-5-5-6">
+    
+    <label class="md-nav__link" for="nav-5-5-6">
+      Vision
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-5-5-6">
+        Vision
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../programming/sr/vision/" title="Vision" class="md-nav__link">
+      Vision
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../programming/sr/vision/markers/" title="Markers" class="md-nav__link">
+      Markers
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Rules
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Rules
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rules/" title="2019 Rules" class="md-nav__link">
+      2019 Rules
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Team admin
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        Team admin
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../team_admin/" title="Team Admin" class="md-nav__link">
+      Team Admin
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../team_admin/kit_shipping/" title="Kit Shipping" class="md-nav__link">
+      Kit Shipping
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../team_admin/user_accounts/" title="User Accounts" class="md-nav__link">
+      User Accounts
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      Troubleshooting
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        Troubleshooting
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../troubleshooting/" title="Troubleshooting" class="md-nav__link">
+      Troubleshooting
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../troubleshooting/python/" title="Python Troubleshooting" class="md-nav__link">
+      Python Troubleshooting
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9" checked>
+    
+    <label class="md-nav__link" for="nav-9">
+      Tutorials
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-9">
+        Tutorials
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../" title="Tutorials" class="md-nav__link">
+      Tutorials
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../basic_motor_control/" title="Basic Motor Control" class="md-nav__link">
+      Basic Motor Control
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Python: A whirlwind tour
+      </label>
+    
+    <a href="./" title="Python: A whirlwind tour" class="md-nav__link md-nav__link--active">
+      Python: A whirlwind tour
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#using-an-interpreter" title="Using an interpreter" class="md-nav__link">
+    Using an interpreter
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#statements" title="Statements" class="md-nav__link">
+    Statements
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#strings" title="Strings" class="md-nav__link">
+    Strings
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comments" title="Comments" class="md-nav__link">
+    Comments
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variables" title="Variables" class="md-nav__link">
+    Variables
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concept-identifiers" title="Concept: Identifiers" class="md-nav__link">
+    Concept: Identifiers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercises-variables-and-mathematics" title="Exercises: Variables and Mathematics" class="md-nav__link">
+    Exercises: Variables and Mathematics
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#average-calculator" title="Average calculator" class="md-nav__link">
+    Average calculator
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#distance-calculator" title="Distance calculator" class="md-nav__link">
+    Distance calculator
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#booleans-and-if-statements" title="Booleans and if statements" class="md-nav__link">
+    Booleans and if statements
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concept-code-blocks-and-indentation" title="Concept: Code blocks and indentation" class="md-nav__link">
+    Concept: Code blocks and indentation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercises-if-statements-and-blocks" title="Exercises: if Statements and Blocks" class="md-nav__link">
+    Exercises: if Statements and Blocks
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#so-many-ifs" title="So many ifs" class="md-nav__link">
+    So many ifs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#age-discrimination-tool" title="Age Discrimination Tool" class="md-nav__link">
+    Age Discrimination Tool
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lists" title="Lists" class="md-nav__link">
+    Lists
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#while-loops" title="while loops" class="md-nav__link">
+    while loops
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#for-loops" title="for loops" class="md-nav__link">
+    for loops
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercises-lists-and-loops" title="Exercises: Lists and Loops" class="md-nav__link">
+    Exercises: Lists and Loops
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-better-average-calculator" title="A better average calculator" class="md-nav__link">
+    A better average calculator
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fizz-buzz" title="Fizz buzz" class="md-nav__link">
+    Fizz buzz
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trees-and-triangles" title="Trees and Triangles" class="md-nav__link">
+    Trees and Triangles
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#calling-functions" title="Calling functions" class="md-nav__link">
+    Calling functions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#defining-functions" title="Defining functions" class="md-nav__link">
+    Defining functions
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-functions-effectively" title="Using functions effectively" class="md-nav__link">
+    Using functions effectively
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concept-scope" title="Concept: Scope" class="md-nav__link">
+    Concept: Scope
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercises-functions" title="Exercises: Functions" class="md-nav__link">
+    Exercises: Functions
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#trigonometry" title="Trigonometry" class="md-nav__link">
+    Trigonometry
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#greeting" title="Greeting" class="md-nav__link">
+    Greeting
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#average-function" title="Average function" class="md-nav__link">
+    Average function
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-to-do-next" title="What to do next" class="md-nav__link">
+    What to do next
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#using-an-interpreter" title="Using an interpreter" class="md-nav__link">
+    Using an interpreter
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#statements" title="Statements" class="md-nav__link">
+    Statements
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#strings" title="Strings" class="md-nav__link">
+    Strings
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comments" title="Comments" class="md-nav__link">
+    Comments
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variables" title="Variables" class="md-nav__link">
+    Variables
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concept-identifiers" title="Concept: Identifiers" class="md-nav__link">
+    Concept: Identifiers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercises-variables-and-mathematics" title="Exercises: Variables and Mathematics" class="md-nav__link">
+    Exercises: Variables and Mathematics
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#average-calculator" title="Average calculator" class="md-nav__link">
+    Average calculator
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#distance-calculator" title="Distance calculator" class="md-nav__link">
+    Distance calculator
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#booleans-and-if-statements" title="Booleans and if statements" class="md-nav__link">
+    Booleans and if statements
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concept-code-blocks-and-indentation" title="Concept: Code blocks and indentation" class="md-nav__link">
+    Concept: Code blocks and indentation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercises-if-statements-and-blocks" title="Exercises: if Statements and Blocks" class="md-nav__link">
+    Exercises: if Statements and Blocks
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#so-many-ifs" title="So many ifs" class="md-nav__link">
+    So many ifs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#age-discrimination-tool" title="Age Discrimination Tool" class="md-nav__link">
+    Age Discrimination Tool
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lists" title="Lists" class="md-nav__link">
+    Lists
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#while-loops" title="while loops" class="md-nav__link">
+    while loops
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#for-loops" title="for loops" class="md-nav__link">
+    for loops
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercises-lists-and-loops" title="Exercises: Lists and Loops" class="md-nav__link">
+    Exercises: Lists and Loops
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-better-average-calculator" title="A better average calculator" class="md-nav__link">
+    A better average calculator
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fizz-buzz" title="Fizz buzz" class="md-nav__link">
+    Fizz buzz
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trees-and-triangles" title="Trees and Triangles" class="md-nav__link">
+    Trees and Triangles
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#calling-functions" title="Calling functions" class="md-nav__link">
+    Calling functions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#defining-functions" title="Defining functions" class="md-nav__link">
+    Defining functions
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-functions-effectively" title="Using functions effectively" class="md-nav__link">
+    Using functions effectively
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concept-scope" title="Concept: Scope" class="md-nav__link">
+    Concept: Scope
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercises-functions" title="Exercises: Functions" class="md-nav__link">
+    Exercises: Functions
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#trigonometry" title="Trigonometry" class="md-nav__link">
+    Trigonometry
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#greeting" title="Greeting" class="md-nav__link">
+    Greeting
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#average-function" title="Average function" class="md-nav__link">
+    Average function
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-to-do-next" title="What to do next" class="md-nav__link">
+    What to do next
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/RealOrangeOne/mkdocs-sr-demo/blob/master/docs/tutorials/python.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="python-a-whirlwind-tour">Python: A whirlwind tour<a class="headerlink" href="#python-a-whirlwind-tour" title="Permanent link">&para;</a></h1>
+<p>In this tutorial, we'll introduce the basic concepts of programming, which will be central to the programs that you will run on your robot. There are many different languages in which computers can be programmed, all with their advantages and disadvantages, but for the Student Robotics competition we use one called Python 2.6. We chose it because it's good for beginners, but also elegant and powerful.</p>
+<p>Sprinkled through the tutorial are exercises. The first ones for each section should be quite easy, while the higher-numbered exercises will be harder. Some will be very hard; try these if you're up for a challenge.</p>
+<p>Before we begin: a word on learning. The way that you learn to code is by doing it; make sure you try out the examples, fiddle with them, break them, try at least one exercise from each section. So, on with the tutorial!</p>
+<h2 id="using-an-interpreter">Using an interpreter<a class="headerlink" href="#using-an-interpreter" title="Permanent link">&para;</a></h2>
+<p>To run Python programs you need a something called an interpreter. This is a computer program which interprets human-readable Python code into something that the computer can execute. There are a number of online interpreters that should work even on a locked-down computer such as you will probably find in your college.</p>
+<p>If your computer has a compatible browser, go to <a href="http://repl.it">http://repl.it</a> and click Python. Enter your program in the box on the left, and click the arrow to run it.</p>
+<p>If your browser isn't compatible, another good online interpreter can be found at <a href="http://codeskulptor.org">http://codeskulptor.org</a>. It's very similar; simply enter your program into the left pane and click the play button to run it. The output will appear in the right pane.</p>
+<p>Whichever you choose, test it with this classic one line program:</p>
+<div class="codehilite"><pre><span></span><span class="k">print</span> <span class="s2">&quot;Hello World!&quot;</span>
+</pre></div>
+
+<p>The text <code>Hello World!</code> should appear in the output box.</p>
+<p>There's nothing particularly wrong with online interpreters for our needs, but if you want to use Python for something more advanced you'll want an interpreter which runs directly on your computer. Mac OS X and Linux come with one by default (just type <code>python</code> at the terminal), and you can download the Windows interpreter from <a href="http://python.org/download">http://python.org/download</a> (try Portable Python (<a href="http://portablepython.com">http://portablepython.com</a>) if you can't install programs on your computer).</p>
+<h2 id="statements">Statements<a class="headerlink" href="#statements" title="Permanent link">&para;</a></h2>
+<p>A statement is a line of code that does something. A program is a list of statements. For example:</p>
+<div class="codehilite"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="mi">4</span>
+<span class="k">print</span> <span class="s2">&quot;Number of bees:&quot;</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="mi">2</span>
+</pre></div>
+
+<p>The statements are executed one by one, in order. This example would give the output <code>Number of bees: 12</code>.</p>
+<p>As you may have guessed, the <code>print</code> statement displays text on the screen, while the other two lines are simple algebra.</p>
+<h3 id="strings">Strings<a class="headerlink" href="#strings" title="Permanent link">&para;</a></h3>
+<p>When you want the interpreter to treat something as a text value (for example, after the <code>print</code> statement above), you have to surround it in quotes. You can use either single (<code>'</code>) or double (<code>"</code>) quotes, but try to be consistent. Pieces of text that are treated like this are called 'strings'.</p>
+<h2 id="comments">Comments<a class="headerlink" href="#comments" title="Permanent link">&para;</a></h2>
+<p>Placing a hash (<code>#</code>) in your program ignores anything after the hash.</p>
+<p>For example:</p>
+<div class="codehilite"><pre><span></span><span class="c1"># This is a comment</span>
+<span class="k">print</span> <span class="s2">&quot;This isn&#39;t.&quot;</span>  <span class="c1"># But this is!</span>
+</pre></div>
+
+<p>You should use comments whenever you think that it is not completely clear what a statement or block of statements does, especially as you are working in teams! Also bear in mind the varying coding skills of your team. You might be the best coder in your team, but what if you were taken ill the day before the competition, and your team-mates had to fix your code?</p>
+<p>Comments are also useful for temporarily removing statements from your code, for testing:</p>
+<div class="codehilite"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">42</span>
+<span class="c1">#x = x - 4</span>
+<span class="k">print</span> <span class="s2">&quot;The answer is&quot;</span><span class="p">,</span> <span class="n">x</span>
+</pre></div>
+
+<p>This example would output <code>The answer is 42</code>, as the subtraction is not executed.</p>
+<h2 id="variables"><a href="#variables">Variables</a><a class="headerlink" href="#variables" title="Permanent link">&para;</a></h2>
+<p>Variables store values for later use, as in the first example. They can store many different things, but the most relevant here are numbers, strings (blocks of text), booleans (<code>True</code> or <code>False</code>) and lists (which we'll come to later).</p>
+<p>To set a variable, simply give its name (see [Identifiers], below), followed by <code>=</code> and a value. For example:</p>
+<div class="codehilite"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">8</span>
+<span class="n">my_string</span> <span class="o">=</span> <span class="s2">&quot;Tall ship&quot;</span>
+</pre></div>
+
+<p>You can ask the user to put some text into a variable with the <code>raw_input</code> function (we'll cover functions in more detail later):</p>
+<div class="codehilite"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="nb">raw_input</span><span class="p">(</span><span class="s2">&quot;What is your name?&quot;</span><span class="p">)</span>
+</pre></div>
+
+<h2 id="concept-identifiers"><a href="#concept-identifiers">Concept: Identifiers</a><a class="headerlink" href="#concept-identifiers" title="Permanent link">&para;</a></h2>
+<p>Certain things in your program, for example variables and functions, will need names. These names are called 'identifiers', and must follow these rules:</p>
+<ul>
+<li>Identifiers can contain letters, digits, and underscores. They may not contain spaces or other symbols.</li>
+<li>An identifier cannot begin with a digit.</li>
+<li>Identifiers are case sensitive. This means that <code>bees</code>, <code>Bees</code> and <code>BEES</code> are three different identifiers.</li>
+</ul>
+<h2 id="exercises-variables-and-mathematics">Exercises: Variables and Mathematics<a class="headerlink" href="#exercises-variables-and-mathematics" title="Permanent link">&para;</a></h2>
+<h3 id="average-calculator">Average calculator<a class="headerlink" href="#average-calculator" title="Permanent link">&para;</a></h3>
+<p>The first two lines of this program put two numbers entered by the user into variables <code>a</code> and <code>b</code>. (The <code>input</code> function is like <code>raw_input</code>, but returns a number (e.g. <code>42</code>) when you enter one, rather than a string (like <code>"42"</code>).) Replace the comment with code that averages the numbers and puts them in a variable called <code>average</code>.</p>
+<div class="codehilite"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter first number: &quot;</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter second number: &quot;</span><span class="p">)</span>
+
+<span class="c1"># Store the average of a and b in the variable `average`</span>
+
+<span class="k">print</span> <span class="s2">&quot;The average of&quot;</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="s2">&quot;and&quot;</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="s2">&quot;is&quot;</span><span class="p">,</span><span class="n">average</span>
+</pre></div>
+
+<p>Run your code and check that it works.</p>
+<h3 id="distance-calculator">Distance calculator<a class="headerlink" href="#distance-calculator" title="Permanent link">&para;</a></h3>
+<p>Write a program which uses <code>input</code> to take an X and a Y coordinate, and calculate the distance from (0, 0) to (X, Y) using Pythagoras' Theorem. Put the code into an interpreter and run it. Does it do what you expected?</p>
+<p><strong>Hint:</strong> you can find the square root of a number by raising it to the power of 0.5, for example, <code>my_number ** 0.5</code>.</p>
+<p><strong>Extension:</strong> can you adapt the program to calculate the distance between any two points?</p>
+<h2 id="booleans-and-if-statements">Booleans and <code>if</code> statements<a class="headerlink" href="#booleans-and-if-statements" title="Permanent link">&para;</a></h2>
+<p>A boolean value is either <code>True</code> or <code>False</code>. For example:</p>
+<div class="codehilite"><pre><span></span><span class="k">print</span> <span class="mi">42</span> <span class="o">&gt;</span> <span class="mi">5</span>
+<span class="k">print</span> <span class="mi">4</span> <span class="o">==</span> <span class="mi">2</span>
+</pre></div>
+
+<p>Output:</p>
+<div class="codehilite"><pre><span></span>True
+False
+</pre></div>
+
+<p><code>&lt;</code> and <code>==</code> are operators, just like <code>+</code> or <code>*</code>, which return booleans. Others include <code>&lt;=</code> (less than or equal to), <code>&gt;</code>, <code>&gt;=</code> and <code>!=</code> (not equal to) (see the <a href="#operators">Operators</a> appendix). You can also use <code>and</code>, <code>or</code>, and <code>not</code>.</p>
+<p><code>if</code> statements execute code only if their condition is true. The code to include in the <code>if</code> is denoted by a number of indented lines (see the concept section on [code blocks][block]). To indent a line, press the tab key or insert four spaces at the start. You can also include an <code>else</code> statement, which is executed if the condition is false. For example:</p>
+<div class="codehilite"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="nb">raw_input</span><span class="p">(</span><span class="s2">&quot;What is your name?&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;Tim&quot;</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s2">&quot;Hello Tim.&quot;</span>
+    <span class="k">print</span> <span class="s2">&quot;You&#39;ve got an email.&quot;</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s2">&quot;You&#39;re not Tim!&quot;</span>
+
+<span class="k">print</span> <span class="s2">&quot;Python rocks!&quot;</span>
+</pre></div>
+
+<p>If you typed "Tim" at the prompt, this example would output:</p>
+<div class="codehilite"><pre><span></span>Hello Tim.
+You&#39;ve got an email.
+Python rocks!
+</pre></div>
+
+<p>Having another <code>if</code> in the <code>else</code> block is very common:</p>
+<div class="codehilite"><pre><span></span><span class="n">price</span> <span class="o">=</span> <span class="mi">50000</span> <span class="o">*</span> <span class="mf">1.3</span>
+<span class="k">if</span> <span class="n">price</span> <span class="o">&lt;</span> <span class="mi">60000</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s2">&quot;We can afford the tall ship!&quot;</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">price</span> <span class="o">&lt;</span> <span class="mi">70000</span><span class="p">:</span>
+        <span class="k">print</span> <span class="s2">&quot;We might be able to afford the tall ship...&quot;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">print</span> <span class="s2">&quot;We can&#39;t afford the tall ship. :-(&quot;</span>
+</pre></div>
+
+<p>So common that there's a special keyword, <code>elif</code>, for the purpose. So, the following piece of code is equivalent to the last:</p>
+<div class="codehilite"><pre><span></span><span class="n">price</span> <span class="o">=</span> <span class="mi">50000</span> <span class="o">*</span> <span class="mf">1.3</span>
+<span class="k">if</span> <span class="n">price</span> <span class="o">&lt;</span> <span class="mi">60000</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s2">&quot;We can afford the tall ship!&quot;</span>
+<span class="k">elif</span> <span class="n">price</span> <span class="o">&lt;</span> <span class="mi">70000</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s2">&quot;We might be able to afford the tall ship...&quot;</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s2">&quot;We can&#39;t afford the tall ship. :-(&quot;</span>
+</pre></div>
+
+<p>Both output:</p>
+<div class="codehilite"><pre><span></span>We might be able to afford the tall ship...
+</pre></div>
+
+<h2 id="concept-code-blocks-and-indentation"><a href="#concept-code-blocks-and-indentation">Concept: Code blocks and indentation</a><a class="headerlink" href="#concept-code-blocks-and-indentation" title="Permanent link">&para;</a></h2>
+<p>In the previous section, you probably noticed that the statements 'inside' the <code>if</code> statements were indented relative to the rest of the code. Python is reasonably unique in that it cares about indentation, and uses it to decide which statements are referred to by things like <code>if</code> statements.</p>
+<p>In most other programming languages, if you don't indent your code it will run just fine, but any poor soul who has to read your code afterwards will hunt you down and hit you around the head with a large, wet fish. In Python, you'll just get an error, which we're sure you'll agree is preferable.</p>
+<p>A group of consecutive statements that are all indented by the same distance is called a block. <code>if</code> statements, as well as functions and loops, all refer to the block that follows them, which must be indented further than that statement. An example is in order. Let's expand the first <code>if</code> example:</p>
+<div class="codehilite"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="nb">raw_input</span><span class="p">(</span><span class="s2">&quot;What is your name?&quot;</span><span class="p">)</span>
+<span class="n">email</span> <span class="o">=</span> <span class="s2">&quot;Bank of Nigeria: Tax Refund&quot;</span>
+<span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;Tim&quot;</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s2">&quot;Hello Tim.&quot;</span>
+    <span class="k">if</span> <span class="n">email</span> <span class="o">!=</span> <span class="s2">&quot;&quot;</span><span class="p">:</span>
+        <span class="k">print</span> <span class="s2">&quot;You&#39;ve got an email.&quot;</span>
+
+        <span class="c1"># (blocks can contain blank lines in the middle)</span>
+        <span class="k">if</span> <span class="n">email</span> <span class="o">!=</span> <span class="s2">&quot;Bank of Nigeria: Tax Refund&quot;</span><span class="p">:</span>
+            <span class="k">print</span> <span class="s2">&quot;Looks legitimate, too!&quot;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">print</span> <span class="s2">&quot;No mail.&quot;</span>
+
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s2">&quot;You&#39;re not Tim!&quot;</span>
+
+<span class="k">print</span> <span class="s2">&quot;Python rocks.&quot;</span>
+</pre></div>
+
+<p>Output (for "Tim" as before):</p>
+<div class="codehilite"><pre><span></span>Hello Tim.
+You&#39;ve got an email!
+Python rocks.
+</pre></div>
+
+<p>To find the limits of an <code>if</code> statement, just scan straight down until you encounter another statement on the same indent level. Play around with this example until you understand what's happening.</p>
+<p>One final thing: Python doesn't mind <em>how</em> you indent lines, just so long as you're consistent. Some text editors insert indent characters when you press tab; others insert spaces (normally four). They'll often look the same, but cause errors if they're mixed. If you're using an online interpreter, you probably don't need to worry. Otherwise, check your editor's settings to make sure they're consistent. Four spaces per indent level is the convention in Python. We'll now move on from this topic before that last sentence causes a flame war.</p>
+<h2 id="exercises-if-statements-and-blocks">Exercises: <code>if</code> Statements and Blocks<a class="headerlink" href="#exercises-if-statements-and-blocks" title="Permanent link">&para;</a></h2>
+<h3 id="so-many-ifs">So many <code>if</code>s<a class="headerlink" href="#so-many-ifs" title="Permanent link">&para;</a></h3>
+<p>Without running it, work out what output the following code will give:</p>
+<div class="codehilite"><pre><span></span><span class="n">some_text</span> <span class="o">=</span> <span class="s2">&quot;Duct Tape&quot;</span>
+<span class="k">if</span> <span class="mi">5</span> <span class="o">&gt;</span> <span class="mi">4</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s2">&quot;Maths works.&quot;</span>
+    <span class="k">if</span> <span class="n">some_text</span> <span class="o">==</span> <span class="s2">&quot;duct tape&quot;</span><span class="p">:</span>
+        <span class="k">print</span> <span class="s2">&quot;The case is wrong.&quot;</span>
+    <span class="k">elif</span> <span class="n">some_text</span> <span class="o">==</span> <span class="s2">&quot;Duct Tape&quot;</span><span class="p">:</span>
+        <span class="k">print</span> <span class="s2">&quot;That&#39;s right.&quot;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">print</span> <span class="s2">&quot;Completely wrong.&quot;</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s2">&quot;Oh-oh.&quot;</span>
+</pre></div>
+
+<p>Run the code and check your prediction.</p>
+<h3 id="age-discrimination-tool">Age Discrimination Tool<a class="headerlink" href="#age-discrimination-tool" title="Permanent link">&para;</a></h3>
+<p>Write a program that asks the user for their age, and prints a different message depending on whether they are under 18, over 65, or in between.</p>
+<h2 id="lists">Lists<a class="headerlink" href="#lists" title="Permanent link">&para;</a></h2>
+<p>Lists store more than one value in a single variable, and allow you to set and retrieve values by their position ('index') in the list. For example:</p>
+<div class="codehilite"><pre><span></span><span class="n">shopping_list</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Bread&quot;</span><span class="p">,</span> <span class="s2">&quot;Milk&quot;</span><span class="p">,</span> <span class="s2">&quot;PNP Transistors&quot;</span><span class="p">,</span> <span class="s2">&quot;Newspaper&quot;</span><span class="p">]</span>
+<span class="k">print</span> <span class="n">shopping_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">shopping_list</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Magazine&quot;</span>
+<span class="k">print</span> <span class="n">shopping_list</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="k">print</span> <span class="n">shopping_list</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+
+<p>Output:</p>
+<div class="codehilite"><pre><span></span>Bread
+PNP Transistors
+Magazine
+</pre></div>
+
+<p>Notice that the indices start at 0, not 1. There is a sensible, technical explanation for this that is beyond this tutorial's scope. Also note that because of this, the last element of this four-element list is at index 3. Attempting to retrieve <code>shopping_list[4]</code> would cause an error.</p>
+<p>You can find out the length of a list with the <code>len</code> function, like so:</p>
+<div class="codehilite"><pre><span></span><span class="n">shopping_list</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Bread&quot;</span><span class="p">,</span> <span class="s2">&quot;Milk&quot;</span><span class="p">,</span> <span class="s2">&quot;PNP Transistors&quot;</span><span class="p">,</span> <span class="s2">&quot;Newspaper&quot;</span><span class="p">]</span>
+<span class="k">print</span> <span class="s2">&quot;There are&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">shopping_list</span><span class="p">),</span> <span class="s2">&quot;items on your list.&quot;</span>
+</pre></div>
+
+<p>Finally, you can add a value to the end of a list with the <code>append</code> method:</p>
+<div class="codehilite"><pre><span></span><span class="n">shopping_list</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Bread&quot;</span><span class="p">,</span> <span class="s2">&quot;Milk&quot;</span><span class="p">,</span> <span class="s2">&quot;PNP Transistors&quot;</span><span class="p">,</span> <span class="s2">&quot;Newspaper&quot;</span><span class="p">]</span>
+<span class="n">shopping_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Mince pies in October&quot;</span><span class="p">)</span>
+<span class="k">print</span> <span class="n">shopping_list</span>
+</pre></div>
+
+<p>The values in a list can be of any type, even other lists. Also, a list can contain values of different types.</p>
+<p>There are various other useful data structures that are beyond the scope of this tutorial, such as dictionaries (which allow indices other than numbers). You can find out more about these at <a href="http://docs.python.org/tutorial/datastructures.html">http://docs.python.org/tutorial/datastructures.html</a>.</p>
+<h2 id="while-loops"><code>while</code> loops<a class="headerlink" href="#while-loops" title="Permanent link">&para;</a></h2>
+<p>The <code>while</code> loop is the most basic type of loop. It repeats the statements in the loop while a condition is true. For example:</p>
+<div class="codehilite"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="k">while</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="k">print</span> <span class="n">x</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
+        <span class="k">print</span> <span class="s2">&quot;Half way there!&quot;</span>
+
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">1</span>
+
+<span class="k">print</span> <span class="s2">&quot;Zero!&quot;</span>
+</pre></div>
+
+<p>Output:</p>
+<div class="codehilite"><pre><span></span>10
+9
+8
+7
+6
+5
+Half way there!
+4
+3
+2
+1
+Zero!
+</pre></div>
+
+<p>The condition is the same as it would be in an <code>if</code> statement, and the block of code to put in the loop is denoted in the same way, too.</p>
+<h2 id="for-loops"><code>for</code> loops<a class="headerlink" href="#for-loops" title="Permanent link">&para;</a></h2>
+<p>The most common application of loops is in conjunction with lists. The <code>for</code> loop is designed specifically for that purpose. For example:</p>
+<div class="codehilite"><pre><span></span><span class="n">shopping_list</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Bread&quot;</span><span class="p">,</span> <span class="s2">&quot;Milk&quot;</span><span class="p">,</span> <span class="s2">&quot;PNP Transistors&quot;</span><span class="p">,</span> <span class="s2">&quot;Newspaper&quot;</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">shopping_list</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s2">&quot;[ ]&quot;</span><span class="p">,</span> <span class="n">x</span>
+</pre></div>
+
+<p>The code is executed once for each item in the list, with <code>x</code> set to each item in turn. So, the output of this example is:</p>
+<div class="codehilite"><pre><span></span>[ ] Bread
+[ ] Milk
+[ ] PNP Transistors
+[ ] Newspaper
+</pre></div>
+
+<p>Unfortunately, this method doesn't tell you the index of the current item. <code>x</code> is only a temporary variable, so modifying it has no effect on the list itself (try it). This is where the <code>enumerate</code> function comes in (see the <a href="#calling-functions">Calling functions</a> section). It tells us the index of each value we loop over. An example with numbers:</p>
+<div class="codehilite"><pre><span></span><span class="n">prices</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">1.50</span><span class="p">]</span>
+<span class="c1"># Add VAT</span>
+<span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">prices</span><span class="p">):</span>
+    <span class="n">prices</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span> <span class="o">*</span> <span class="mf">1.20</span>
+
+<span class="k">print</span> <span class="n">prices</span>
+</pre></div>
+
+<p>Output:</p>
+<div class="codehilite"><pre><span></span>[4.8, 6.0, 2.4, 1.7999999999999998]
+</pre></div>
+
+<h2 id="exercises-lists-and-loops">Exercises: Lists and Loops<a class="headerlink" href="#exercises-lists-and-loops" title="Permanent link">&para;</a></h2>
+<h3 id="a-better-average-calculator">A better average calculator<a class="headerlink" href="#a-better-average-calculator" title="Permanent link">&para;</a></h3>
+<p>Write a program which calculates the average of a list of numbers. You can specify the list in the code.</p>
+<p><strong>Extension:</strong>
+You can tell when a user has not entered anything at a <code>raw_input</code> prompt when it returns the empty string, <code>""</code>. Otherwise, it returns a string (like "42.5"), which you can turn into a number with the <code>float</code> function. For example:</p>
+<div class="codehilite"><pre><span></span><span class="n">var</span> <span class="o">=</span> <span class="nb">raw_input</span><span class="p">(</span><span class="s2">&quot;Enter a number: &quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">var</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s2">&quot;You didn&#39;t enter anything!&quot;</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s2">&quot;You entered&quot;</span><span class="p">,</span><span class="nb">float</span><span class="p">(</span><span class="n">var</span><span class="p">)</span>
+</pre></div>
+
+<p>Now, extend your program to let the user enter the list of values. Stop asking for new list entries when they do not enter anything at the <code>raw_input</code> prompt.</p>
+<h3 id="fizz-buzz">Fizz buzz<a class="headerlink" href="#fizz-buzz" title="Permanent link">&para;</a></h3>
+<p>Write a program which prints a list of numbers from 0 to 100, but replace numbers divisible by 3 with "Fizz", numbers divisible by 5 with "Buzz", and numbers divisible by both with "Fizz Buzz".</p>
+<p><strong>Hint:</strong> you might find the <code>range</code> function from the next section useful.</p>
+<p><strong>Extension:</strong> create a list of numbers, and replace a number with "Fuzz" if it is a multiple of any number in the list.</p>
+<h3 id="trees-and-triangles">Trees and Triangles<a class="headerlink" href="#trees-and-triangles" title="Permanent link">&para;</a></h3>
+<p>You can combine (or 'concatenate') strings in Python with the <code>+</code> operator:</p>
+<div class="codehilite"><pre><span></span><span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;Hello &quot;</span>
+<span class="nb">str</span> <span class="o">=</span> <span class="nb">str</span> <span class="o">+</span> <span class="s2">&quot;World!&quot;</span>
+<span class="k">print</span> <span class="nb">str</span>
+</pre></div>
+
+<p>Write a program that asks the user for a number, and then prints a triangle of that height, with its right angle at the bottom left. For example, given the number 3, the program should output:</p>
+<div class="codehilite"><pre><span></span>*
+**
+***
+</pre></div>
+
+<p>Try the same, but with the right angle in the top-right, like so (again, for input 3):</p>
+<div class="codehilite"><pre><span></span>***
+ **
+  *
+</pre></div>
+
+<p><strong>Extension:</strong> print out a tree shape of the given size. For example, a tree of size 4 would look like this:</p>
+<div class="codehilite"><pre><span></span>   *
+  ***
+ *****
+*******
+   *
+   *
+</pre></div>
+
+<h2 id="calling-functions"><a href="#calling-functions">Calling functions</a><a class="headerlink" href="#calling-functions" title="Permanent link">&para;</a></h2>
+<p>Functions are pre-written bits of code that can be run ('called') at any point. The simplest functions take no parameters and return nothing. For example, the <code>exit</code> function ends your program prematurely:</p>
+<div class="codehilite"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="k">while</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="k">print</span> <span class="n">x</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
+        <span class="nb">exit</span><span class="p">()</span>  <span class="c1"># not supported in repl.it</span>
+</pre></div>
+
+<p>This will output the numbers 10 to 6, and then stop. Not very useful. However, most functions take input values ('parameters') and output something useful (a 'return value'). For example, the <code>len</code> function returns the length of the given list:</p>
+<div class="codehilite"><pre><span></span><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">42</span><span class="p">,</span> <span class="s2">&quot;BOOMERANG!!!&quot;</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">]]</span>
+<span class="k">print</span> <span class="nb">len</span><span class="p">(</span><span class="n">my_list</span><span class="p">)</span>
+</pre></div>
+
+<p>Output:</p>
+<div class="codehilite"><pre><span></span>3
+</pre></div>
+
+<p>Combined with the <code>range</code> function, which returns a list of numbers in a certain range, you get a list of indices for the list (you might want to look back at that second <code>for</code> example).</p>
+<div class="codehilite"><pre><span></span><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">42</span><span class="p">,</span> <span class="s2">&quot;BOOMERANG!!!&quot;</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">]]</span>
+<span class="k">print</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">my_list</span><span class="p">))</span>
+</pre></div>
+
+<p>Output:</p>
+<div class="codehilite"><pre><span></span>[0, 1, 2]
+</pre></div>
+
+<p>The <code>range</code> function can also take multiple parameters:</p>
+<div class="codehilite"><pre><span></span><span class="k">print</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>            <span class="c1"># numbers from 0 to 4.</span>
+<span class="k">print</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>         <span class="c1"># numbers from 2 to 4.</span>
+<span class="k">print</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>     <span class="c1"># odd numbers from 1 to 10</span>
+</pre></div>
+
+<p>Output:</p>
+<div class="codehilite"><pre><span></span>[0, 1, 2, 3, 4]
+[2, 3, 4]
+[1, 3, 5, 7, 9]
+</pre></div>
+
+<p>There are many built-in functions supplied with Python (see <a href="#built-in-functions">appendix</a>). Most are in 'modules', collections of functions which have to be imported. For example, the <code>math</code> module contains mathematical functions. To use the <code>sin</code> function, we must import it:</p>
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+
+<span class="k">print</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+
+<h2 id="defining-functions">Defining functions<a class="headerlink" href="#defining-functions" title="Permanent link">&para;</a></h2>
+<p>Of course, you'll want to make your own functions. To do this, you precede a block of code with a <code>def</code> statement, specifying an [identifier] for the function, and any parameters you might want. For example:</p>
+<div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">annoy</span><span class="p">(</span><span class="n">num_times</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_times</span><span class="p">):</span>
+        <span class="k">print</span> <span class="s2">&quot;Na na na-na na!&quot;</span>
+
+<span class="n">annoy</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+
+<p>The output would be three annoying lines of <code>Na na na-na na!</code>.</p>
+<p>To return a value, use the <code>return</code> statement. A rather trivial example:</p>
+<div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">multiply</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span>
+
+<span class="k">print</span> <span class="n">multiply</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+
+<h3 id="using-functions-effectively">Using functions effectively<a class="headerlink" href="#using-functions-effectively" title="Permanent link">&para;</a></h3>
+<p>Without functions, most programs would be very hard to read and maintain. Here's an example (admittedly a little contrived):</p>
+<div class="codehilite"><pre><span></span><span class="n">my_string</span> <span class="o">=</span> <span class="s2">&quot;All bees like cheese when they&#39;re wearing hats.&quot;</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">my_string</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">c</span> <span class="o">==</span> <span class="s2">&quot;a&quot;</span><span class="p">:</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="n">y</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">my_string</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">c</span> <span class="o">==</span> <span class="s2">&quot;e&quot;</span><span class="p">:</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span> <span class="mi">1</span>
+</pre></div>
+
+<p>Before we explain the example, try and figure out what it does. What do <code>x</code> and <code>y</code> represent?</p>
+<p>Now, let's refine it with functions:</p>
+<div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">count_letter</span><span class="p">(</span><span class="n">string</span><span class="p">,</span> <span class="n">l</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">string</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">c</span> <span class="o">==</span> <span class="n">l</span><span class="p">:</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+
+    <span class="k">return</span> <span class="n">x</span>
+
+<span class="n">my_string</span> <span class="o">=</span> <span class="s2">&quot;Bees like cheese when they&#39;re wearing hats.&quot;</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">count_letter</span><span class="p">(</span><span class="n">my_string</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">count_letter</span><span class="p">(</span><span class="n">my_string</span><span class="p">,</span> <span class="s2">&quot;e&quot;</span><span class="p">)</span>
+</pre></div>
+
+<p>This version has a number of advantages:</p>
+<ul>
+<li>
+<p>It's far more obvious what the program does.</p>
+</li>
+<li>
+<p>The program is shorter, and cleaner.</p>
+</li>
+<li>
+<p>The code for counting letters in a string is in only one place, and can be reused.</p>
+</li>
+</ul>
+<p>The last point has another advantage. There's a bug in this program: upper-case letters aren't counted. It's easy to fix, but in the function version we only have to apply the fix in one place. True, it would only be two places in the original, but in a major program, it could be thousands.</p>
+<p>You should try and use functions wherever you see multiple lines of code that are repeated, or find yourself writing code to do the same thing (or a similar thing) more than once. In these situations, look at the relevant bits of code and try to think of a way to put it into a function.</p>
+<h2 id="concept-scope">Concept: Scope<a class="headerlink" href="#concept-scope" title="Permanent link">&para;</a></h2>
+<p>When you set a variable inside a function, it will only keep its value inside that function. For example:</p>
+<div class="codehilite"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="k">def</span> <span class="nf">foo</span><span class="p">():</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="mi">3</span>
+    <span class="k">print</span> <span class="s2">&quot;In foo(), x =&quot;</span><span class="p">,</span> <span class="n">x</span>
+
+<span class="n">foo</span><span class="p">()</span>
+<span class="k">print</span> <span class="s2">&quot;Outside foo(), x =&quot;</span><span class="p">,</span> <span class="n">x</span>
+</pre></div>
+
+<p>Output:</p>
+<div class="codehilite"><pre><span></span>In foo(), x = 3
+Outside foo(), x = 2
+</pre></div>
+
+<p>This can get quite confusing, so it's best to avoid giving variables inside functions ('local' variables) the same identifier as those outside. If you want to get information out of a function, <code>return</code> it.</p>
+<p>This concept is called 'scope'. We say that variables which are changed inside a function are in a different scope from those outside.</p>
+<p>You can have functions within functions, and this can actually be quite useful. In this situation, each nested function will also have its own scope.</p>
+<h2 id="exercises-functions">Exercises: Functions<a class="headerlink" href="#exercises-functions" title="Permanent link">&para;</a></h2>
+<h3 id="trigonometry">Trigonometry<a class="headerlink" href="#trigonometry" title="Permanent link">&para;</a></h3>
+<p>Write a program that takes as input an angle (in radians) and the length of one side (of your choice) of a right-angled triangle. Print out the length of all sides of the triangle.</p>
+<p>You'll need the functions contained in the <code>math</code> module (<a href="http://docs.python.org/library/math.html">http://docs.python.org/library/math.html</a>). Note that Python uses radians for its angles. If you are not comfortable with radians, you can use the <code>radians</code> function in the <code>math</code> module to convert to radians from degrees.</p>
+<p><strong>Extension:</strong> you can return multiple values from a function like so:</p>
+<div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">foo</span><span class="p">():</span>
+    <span class="k">return</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span>
+
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="n">foo</span><span class="p">()</span>
+</pre></div>
+
+<p>Wrap your triangle calculation code in a function.</p>
+<h3 id="greeting">Greeting<a class="headerlink" href="#greeting" title="Permanent link">&para;</a></h3>
+<p>Write a function that takes a name as an input, and prints a message greeting that person.</p>
+<h3 id="average-function">Average function<a class="headerlink" href="#average-function" title="Permanent link">&para;</a></h3>
+<p>Wrap the code for your average calculator from the Lists and Loops exercises in a function that takes a list as a parameter and returns its average.</p>
+<h2 id="what-to-do-next">What to do next<a class="headerlink" href="#what-to-do-next" title="Permanent link">&para;</a></h2>
+<p>As mentioned at the start, there are loads of Python exercises out there on the Web. If you want to learn some more advanced concepts, there are more tutorials out there too, and <a href="http://learnpython.org/">http://learnpython.org/</a> looks like a good choice. Start at the Classes and Objects section.</p>
+<h1 id="appendices">Appendices<a class="headerlink" href="#appendices" title="Permanent link">&para;</a></h1>
+<h2 id="operators"><a href="#operators">Operators</a><a class="headerlink" href="#operators" title="Permanent link">&para;</a></h2>
+<p>There are three types of operators in Python: arithmetic, comparison, and logical. I'll list the most important.</p>
+<h3 id="arithmetic">Arithmetic<a class="headerlink" href="#arithmetic" title="Permanent link">&para;</a></h3>
+<p>The usual mathematical order (BODMAS) applies to these, just like in normal algebra.</p>
+<dl>
+<dt><code>+</code>, <code>-</code>, <code>*</code>, <code>/</code></dt>
+<dd>Self-explanatory (if you're having trouble with division, read the first half of this article: <a href="http://www.ferg.org/projects/python_gotchas.html">http://www.ferg.org/projects/python_gotchas.html</a>)</dd>
+<dt>'%'</dt>
+<dd>Remainder. For example, <code>5 % 2</code> is 1, <code>4 % 2</code> is 0.</dd>
+<dt><code>**</code></dt>
+<dd>power (e.g. <code>4 ** 2</code> is 4 squared)</dd>
+</dl>
+<h3 id="comparison">Comparison<a class="headerlink" href="#comparison" title="Permanent link">&para;</a></h3>
+<p>These return a boolean (<code>True</code> or <code>False</code>) value, and are used in <code>if</code> statements and <code>while</code> loops. These are always done after arithmetic.</p>
+<dl>
+<dt><code>==</code>, <code>!=</code></dt>
+<dd>equal to, not equal to</dd>
+<dt><code>&lt;</code>, <code>&lt;=</code>, <code>&gt;</code>, <code>&gt;=</code></dt>
+<dd>less than, less than or equal to, greater than, etc.</dd>
+<dt><code>in</code></dt>
+<dd>returns true if the string on the left is contained in the string on the right. For example:</dd>
+</dl>
+<div class="codehilite"><pre><span></span><span class="k">if</span> <span class="s2">&quot;car&quot;</span> <span class="ow">in</span> <span class="s2">&quot;Scarzy&#39;s hair&quot;</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s2">&quot;Of course.&quot;</span>
+</pre></div>
+
+<h3 id="logical">Logical<a class="headerlink" href="#logical" title="Permanent link">&para;</a></h3>
+<p>These operators are <code>and</code>, <code>or</code>, and <code>not</code>. They are done after both arithmetic and comparisons. They're pretty self-explanatory, with an example:</p>
+<div class="codehilite"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">8</span>
+<span class="n">z</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">5</span> <span class="ow">and</span> <span class="n">y</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s2">&quot;True&quot;</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s2">&quot;False&quot;</span>
+
+<span class="k">print</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">5</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">y</span> <span class="o">==</span> <span class="mi">8</span>         <span class="c1"># could use y != 8 instead</span>
+<span class="k">print</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">2</span> <span class="ow">and</span> <span class="n">y</span> <span class="o">==</span> <span class="mi">3</span> <span class="ow">or</span> <span class="n">z</span> <span class="o">==</span> <span class="mi">2</span>  <span class="c1"># needs brackets for clarity!</span>
+</pre></div>
+
+<p>Output:</p>
+<div class="codehilite"><pre><span></span>False
+True
+True
+</pre></div>
+
+<p>When more than one boolean operator is used in an expression, <code>not</code> is performed first (as it works on a single operand). After this, <code>and</code> is done before <code>or</code>, but you should use brackets instead of relying on that fact, for readability. So, the last line of the example should read:</p>
+<div class="codehilite"><pre><span></span><span class="k">print</span> <span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="mi">2</span> <span class="ow">and</span> <span class="n">y</span> <span class="o">==</span> <span class="mi">3</span><span class="p">)</span> <span class="ow">or</span> <span class="n">z</span> <span class="o">==</span> <span class="mi">2</span>
+</pre></div>
+
+<h2 id="built-in-functions"><a href="#built-in-function">Built-in functions</a><a class="headerlink" href="#built-in-functions" title="Permanent link">&para;</a></h2>
+<p>A lot of functions are defined for you by Python. Those listed at <a href="http://docs.python.org/library/functions.html">http://docs.python.org/library/functions.html</a> are always available, and are the most commonly used, including <code>len</code>, <code>range</code>, and enumerate.</p>
+<p>Others are contained in modules. To use a function from a module, you must <code>import</code> that module, like so:</p>
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<span class="k">print</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+
+<p>One of the most useful modules for the moment will be <code>math</code> (<a href="http://docs.python.org/library/math.html">http://docs.python.org/library/math.html</a>).</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../basic_motor_control/" title="Basic Motor Control" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Basic Motor Control
+              </span>
+            </div>
+          </a>
+        
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; Student Robotics
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../../assets/fonts/font-awesome.css">
+    
+      <a href="https://studentrobotics.org" class="md-footer-social__link fa fa-globe"></a>
+    
+      <a href="https://github.com/srobo" class="md-footer-social__link fa fa-github-alt"></a>
+    
+      <a href="https://twitter.com/studentrobotics" class="md-footer-social__link fa fa-twitter"></a>
+    
+  </div>
+
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.b41f3d20.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+    
+    
+      
+    
+  </body>
+</html>

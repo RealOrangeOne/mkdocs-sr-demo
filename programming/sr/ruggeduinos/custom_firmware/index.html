@@ -1,0 +1,1815 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+        <link rel="canonical" href="https://realorangeone.github.io/mkdocs-sr-demo/programming/sr/ruggeduinos/custom_firmware/">
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.2.0">
+    
+    
+      
+        <title>Ruggeduino custom firmware</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/application.572ca0f0.css">
+      
+        <link rel="stylesheet" href="../../../../assets/stylesheets/application-palette.22915126.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#2196f3">
+      
+    
+    
+      <script src="../../../../assets/javascripts/modernizr.8c900955.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../../../assets/fonts/material-icons.css">
+    
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#custom-firmware" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://realorangeone.github.io/mkdocs-sr-demo/" title="SR Competition Docs" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                SR Competition Docs
+              </span>
+              <span class="md-header-nav__topic">
+                Ruggeduino custom firmware
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/RealOrangeOne/mkdocs-sr-demo/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../../../.." title="Some Documentation page" class="md-tabs__link">
+        Some Documentation page
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../../IDE/" title="IDE" class="md-tabs__link">
+          IDE
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../../kit/" title="Kit" class="md-tabs__link">
+          Kit
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../" title="Programming" class="md-tabs__link md-tabs__link--active">
+          Programming
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../../rules/" title="Rules" class="md-tabs__link">
+          Rules
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../../team_admin/" title="Team admin" class="md-tabs__link">
+          Team admin
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../../troubleshooting/" title="Troubleshooting" class="md-tabs__link">
+          Troubleshooting
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../../tutorials/" title="Tutorials" class="md-tabs__link">
+          Tutorials
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://realorangeone.github.io/mkdocs-sr-demo/" title="SR Competition Docs" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    SR Competition Docs
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/RealOrangeOne/mkdocs-sr-demo/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../.." title="Some Documentation page" class="md-nav__link">
+      Some Documentation page
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../../page_1/" title="Page 1" class="md-nav__link">
+      Page 1
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      IDE
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        IDE
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../IDE/" title="IDE" class="md-nav__link">
+      IDE
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../IDE/code_checking/" title="Code Checking" class="md-nav__link">
+      Code Checking
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../IDE/creating_a_project/" title="Creating a Project" class="md-nav__link">
+      Creating a Project
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../IDE/finding_things/" title="Finding things in the IDE" class="md-nav__link">
+      Finding things in the IDE
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../IDE/getting_code_on_the_robot/" title="Getting Code on the Robot" class="md-nav__link">
+      Getting Code on the Robot
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../IDE/good_commit_messages/" title="Writing Good Commit Messages" class="md-nav__link">
+      Writing Good Commit Messages
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../IDE/shortcuts_menu/" title="The shortcuts menu in the IDE" class="md-nav__link">
+      The shortcuts menu in the IDE
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../IDE/user_settings/" title="User configurable settings in the IDE" class="md-nav__link">
+      User configurable settings in the IDE
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../IDE/version_control/" title="Version Control in the IDE" class="md-nav__link">
+      Version Control in the IDE
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Kit
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Kit
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../kit/" title="Kit" class="md-nav__link">
+      Kit
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../kit/assembly/" title="Kit Assembly" class="md-nav__link">
+      Kit Assembly
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../kit/brain_board/" title="Brain Board" class="md-nav__link">
+      Brain Board
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../kit/motor_board/" title="Motor Board" class="md-nav__link">
+      Motor Board
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../kit/power_board/" title="Power Board" class="md-nav__link">
+      Power Board
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../kit/ruggeduino/" title="Ruggeduino" class="md-nav__link">
+      Ruggeduino
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../kit/servo_board/" title="Servo Board" class="md-nav__link">
+      Servo Board
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../kit/wifi/" title="WiFi" class="md-nav__link">
+      WiFi
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-9" type="checkbox" id="nav-4-9">
+    
+    <label class="md-nav__link" for="nav-4-9">
+      Batteries
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-9">
+        Batteries
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../kit/batteries/" title="Batteries and Charging" class="md-nav__link">
+      Batteries and Charging
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../kit/batteries/hke4_charger/" title="The HobbyKing HKE4 Charger" class="md-nav__link">
+      The HobbyKing HKE4 Charger
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../kit/batteries/imax_b6_charger/" title="The iMAX B6 Charger" class="md-nav__link">
+      The iMAX B6 Charger
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
+    
+    <label class="md-nav__link" for="nav-5">
+      Programming
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Programming
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../" title="Programming" class="md-nav__link">
+      Programming
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../git_repositories/" title="Git Repositories" class="md-nav__link">
+      Git Repositories
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../simulator/" title="Simulator" class="md-nav__link">
+      Simulator
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-4" type="checkbox" id="nav-5-4">
+    
+    <label class="md-nav__link" for="nav-5-4">
+      Python
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-4">
+        Python
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../python/" title="Python" class="md-nav__link">
+      Python
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../python/functions/" title="Writing your own functions" class="md-nav__link">
+      Writing your own functions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../python/libraries/" title="Included Python Libraries" class="md-nav__link">
+      Included Python Libraries
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-5" type="checkbox" id="nav-5-5" checked>
+    
+    <label class="md-nav__link" for="nav-5-5">
+      Sr
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-5">
+        Sr
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../" title="SR Module" class="md-nav__link">
+      SR Module
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-5-2" type="checkbox" id="nav-5-5-2">
+    
+    <label class="md-nav__link" for="nav-5-5-2">
+      Motors
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-5-5-2">
+        Motors
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../motors/" title="Motors" class="md-nav__link">
+      Motors
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-5-3" type="checkbox" id="nav-5-5-3">
+    
+    <label class="md-nav__link" for="nav-5-5-3">
+      Power
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-5-5-3">
+        Power
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../power/" title="Power" class="md-nav__link">
+      Power
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-5-4" type="checkbox" id="nav-5-5-4" checked>
+    
+    <label class="md-nav__link" for="nav-5-5-4">
+      Ruggeduinos
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-5-5-4">
+        Ruggeduinos
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../" title="IO (Ruggeduino)" class="md-nav__link">
+      IO (Ruggeduino)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Ruggeduino custom firmware
+      </label>
+    
+    <a href="./" title="Ruggeduino custom firmware" class="md-nav__link md-nav__link--active">
+      Ruggeduino custom firmware
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#extension-of-the-sr-firmware" title="Extension of the SR firmware" class="md-nav__link">
+    Extension of the SR firmware
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-add-your-command-to-the-ruggeduino-firmware" title="Step 1: Add your command to the Ruggeduino firmware" class="md-nav__link">
+    Step 1: Add your command to the Ruggeduino firmware
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-extend-the-ruggeduino-class" title="Step 2: Extend the Ruggeduino class" class="md-nav__link">
+    Step 2: Extend the Ruggeduino class
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#with-selflock" title="with self.lock:" class="md-nav__link">
+    with self.lock:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#responses" title="Responses" class="md-nav__link">
+    Responses
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-tell-the-robot-to-use-your-extended-class" title="Step 3: Tell the Robot to use your extended class" class="md-nav__link">
+    Step 3: Tell the Robot to use your extended class
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#multiple-ruggeduinos-with-extended-sr-firmwares" title="Multiple Ruggeduinos with Extended SR Firmwares" class="md-nav__link">
+    Multiple Ruggeduinos with Extended SR Firmwares
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#completely-custom-firmware" title="Completely custom firmware" class="md-nav__link">
+    Completely custom firmware
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-5-5" type="checkbox" id="nav-5-5-5">
+    
+    <label class="md-nav__link" for="nav-5-5-5">
+      Servos
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-5-5-5">
+        Servos
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../servos/" title="Servos" class="md-nav__link">
+      Servos
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-5-6" type="checkbox" id="nav-5-5-6">
+    
+    <label class="md-nav__link" for="nav-5-5-6">
+      Vision
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-5-5-6">
+        Vision
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../vision/" title="Vision" class="md-nav__link">
+      Vision
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../vision/markers/" title="Markers" class="md-nav__link">
+      Markers
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Rules
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Rules
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../rules/" title="2019 Rules" class="md-nav__link">
+      2019 Rules
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Team admin
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        Team admin
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../team_admin/" title="Team Admin" class="md-nav__link">
+      Team Admin
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../team_admin/kit_shipping/" title="Kit Shipping" class="md-nav__link">
+      Kit Shipping
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../team_admin/user_accounts/" title="User Accounts" class="md-nav__link">
+      User Accounts
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      Troubleshooting
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        Troubleshooting
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../troubleshooting/" title="Troubleshooting" class="md-nav__link">
+      Troubleshooting
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../troubleshooting/python/" title="Python Troubleshooting" class="md-nav__link">
+      Python Troubleshooting
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+    
+    <label class="md-nav__link" for="nav-9">
+      Tutorials
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-9">
+        Tutorials
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../tutorials/" title="Tutorials" class="md-nav__link">
+      Tutorials
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../tutorials/basic_motor_control/" title="Basic Motor Control" class="md-nav__link">
+      Basic Motor Control
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../tutorials/python/" title="Python: A whirlwind tour" class="md-nav__link">
+      Python: A whirlwind tour
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#extension-of-the-sr-firmware" title="Extension of the SR firmware" class="md-nav__link">
+    Extension of the SR firmware
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-add-your-command-to-the-ruggeduino-firmware" title="Step 1: Add your command to the Ruggeduino firmware" class="md-nav__link">
+    Step 1: Add your command to the Ruggeduino firmware
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-extend-the-ruggeduino-class" title="Step 2: Extend the Ruggeduino class" class="md-nav__link">
+    Step 2: Extend the Ruggeduino class
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#with-selflock" title="with self.lock:" class="md-nav__link">
+    with self.lock:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#responses" title="Responses" class="md-nav__link">
+    Responses
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-tell-the-robot-to-use-your-extended-class" title="Step 3: Tell the Robot to use your extended class" class="md-nav__link">
+    Step 3: Tell the Robot to use your extended class
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#multiple-ruggeduinos-with-extended-sr-firmwares" title="Multiple Ruggeduinos with Extended SR Firmwares" class="md-nav__link">
+    Multiple Ruggeduinos with Extended SR Firmwares
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#completely-custom-firmware" title="Completely custom firmware" class="md-nav__link">
+    Completely custom firmware
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/RealOrangeOne/mkdocs-sr-demo/blob/master/docs/programming/sr/ruggeduinos/custom_firmware.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="custom-firmware">Custom firmware<a class="headerlink" href="#custom-firmware" title="Permanent link">&para;</a></h1>
+<p>The Ruggeduino that came as part of your kit was shipped with a firmware that provides the functionality outlined in the <a href="/docs/programming/sr/ruggeduinos">Ruggeduino</a> page.
+You may wish to extend the functionality of this firmware, or completely replace it.
+The <code>sr.robot</code> library provides support for three Ruggeduino firmware scenarios:</p>
+<ol>
+<li>Default SR firmware</li>
+<li><a href="#extension">Extended SR firmware</a>: Firmwares that add commands to the default SR firmware.</li>
+<li><a href="#completely">Completely custom</a>: Any firmware not derived from the SR firmware.</li>
+</ol>
+<p>By default, the <a href="/docs/programming/sr/"><code>sr.robot</code></a> library assumes that all connected Ruggeduinos are running the SR firmware.
+If you wish to use an extended SR firmware, or completely custom firmware,
+ then you need to tell the <code>Robot</code> object what to do with your Ruggeduino(s).
+To do this, you will need to expand the initialisation of your <code>Robot</code> object as detailed <a href="/docs/programming/sr/#CustomRobotInit">here</a>.
+Your code will then look something like this:</p>
+<div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">sr.robot</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="n">R</span> <span class="o">=</span> <span class="n">Robot</span><span class="o">.</span><span class="n">setup</span><span class="p">()</span>
+
+<span class="n">R</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+
+<span class="n">R</span><span class="o">.</span><span class="n">wait_start</span><span class="p">()</span>
+
+<span class="c1"># The rest of your code</span>
+</pre></div>
+
+<p>The next step depends on whether you are running an extended SR firmware, or a completely custom firmware.</p>
+<h2 id="extension-of-the-sr-firmware"><a href="#extension">Extension of the SR firmware</a><a class="headerlink" href="#extension-of-the-sr-firmware" title="Permanent link">&para;</a></h2>
+<p>You may wish to extend the SR firmware with additional functionality.
+This will allow you to continue using the commands already provided by the SR firmware (e.g. <code>digital_read()</code>),
+ which means any existing robot code you have won't need modifying very much.
+When you extend the SR firmware, you'll be adding at least one new command to the firmware.
+There are almost limitless possibilities of what your commands may do, but here are some examples to give you an idea:</p>
+<ul>
+<li>Talk to an SPI or I2C sensor.</li>
+<li>Read N input pins at the same instant in time.</li>
+<li>Time pulses received from an ultrasound sensor.</li>
+</ul>
+<p>There are three steps that you will need to go through to implement and use your custom commands:</p>
+<h3 id="step-1-add-your-command-to-the-ruggeduino-firmware">Step 1: Add your command to the Ruggeduino firmware<a class="headerlink" href="#step-1-add-your-command-to-the-ruggeduino-firmware" title="Permanent link">&para;</a></h3>
+<p>To extend the SR firmware, you will need to first download its <a href="/resources/kit/ruggeduino-fw.ino">source code</a>, and edit it in the Arduino IDE.
+When the SR ruggeduino python library wants the ruggeduino to run a command, it sends it a single character to tell it which command to run.
+You'll find a <code>switch</code> statement in the <code>loop()</code> function that processes this command character:</p>
+<div class="codehilite"><pre><span></span><span class="k">switch</span> <span class="p">(</span><span class="n">selected_command</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">case</span> <span class="sc">&#39;a&#39;</span><span class="o">:</span>
+        <span class="n">command_analogue_read</span><span class="p">();</span>
+        <span class="k">break</span><span class="p">;</span>
+      <span class="k">case</span> <span class="sc">&#39;r&#39;</span><span class="o">:</span>
+        <span class="n">command_read</span><span class="p">();</span>
+        <span class="k">break</span><span class="p">;</span>
+      <span class="k">case</span> <span class="sc">&#39;l&#39;</span><span class="o">:</span>
+        <span class="n">command_write</span><span class="p">(</span><span class="n">LOW</span><span class="p">);</span>
+        <span class="k">break</span><span class="p">;</span>
+
+ <span class="c1">// ... and so on ...</span>
+</pre></div>
+
+<p>For example, you can see in the above that when it receives an "a" character, it calls the <code>command_analogue_read()</code> function.
+This function does pretty much what it says on the tin: it reads an analogue pin.</p>
+<p>You will need to add your own entry into this <code>switch</code> statement for your new command.
+This will need to be represented by a character that doesn't already appear in the switch statement.
+Let's say you chose "c"; your entry would look like this:</p>
+<div class="codehilite"><pre><span></span><span class="k">switch</span> <span class="p">(</span><span class="n">selected_command</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">case</span> <span class="sc">&#39;c&#39;</span><span class="o">:</span>
+        <span class="n">command_bake_cake</span><span class="p">();</span>
+        <span class="k">break</span><span class="p">;</span>
+
+ <span class="c1">// ... all the original entries ...</span>
+</pre></div>
+
+<p>You would then write your <code>command_bake_cake()</code> function.
+Your command can read additional data from the serial port if it requires additional information to operate.
+It can also write a response back to the host (your Python code).
+Have a look at the <code>command_read()</code> function to see how to do this.</p>
+<h3 id="step-2-extend-the-ruggeduino-class">Step 2: Extend the <code>Ruggeduino</code> class<a class="headerlink" href="#step-2-extend-the-ruggeduino-class" title="Permanent link">&para;</a></h3>
+<p>Your robot's python code will, by default, use a <code>Ruggeduino</code> object to communicate with the Ruggeduino.
+The object returned to you when you type <code>R.ruggeduinos[0]</code> is a <code>Ruggeduino</code> instance.
+This object knows how to talk to the default command handlers in the SR firmware.</p>
+<div class="info" markdown="1">
+Don't worry if you don't know what "object" means -- you can probably blag this without knowing!
+If you do want to know about them, you'll find introductions to them all over the web.
+You could try [this one](http://www.jesshamrick.com/2011/05/18/an-introduction-to-classes-and-inheritance-in-python/), for example.
+</div>
+
+<p>You'll need to extend the <code>Ruggeduino</code> class, giving it at least one extra method to perform your command.
+Start by adding this to your code:</p>
+<div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">sr.robot</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="k">class</span> <span class="nc">CustomisedRuggeduino</span><span class="p">(</span><span class="n">Ruggeduino</span><span class="p">):</span>
+    <span class="k">pass</span>
+</pre></div>
+
+<p>You've just declared a class called <code>CustomisedRuggeduino</code> (you will probably want to call it something else that makes more sense in your application).
+At the moment, it behaves in exactly the same way as the <code>Ruggeduino</code> class.
+You now need to add your custom method to it:</p>
+<div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">sr.robot</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="k">class</span> <span class="nc">CustomisedRuggeduino</span><span class="p">(</span><span class="n">Ruggeduino</span><span class="p">):</span>
+
+    <span class="c1"># Your function for instructing a Ruggeduino to bake a cake</span>
+    <span class="k">def</span> <span class="nf">bake_cake</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">lock</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">command</span><span class="p">(</span><span class="s2">&quot;c&quot;</span><span class="p">)</span>
+</pre></div>
+
+<p>Skipping ahead for a moment: Once we've told your <code>Robot</code> object about this <code>CustomisedRuggeduino</code>
+ class (which we do in the next step), you will be able to do this:</p>
+<div class="codehilite"><pre><span></span><span class="n">R</span><span class="o">.</span><span class="n">ruggeduinos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">bake_cake</span><span class="p">()</span>
+<span class="c1"># and you&#39;ll still be able to do this:</span>
+<span class="n">R</span><span class="o">.</span><span class="n">ruggeduinos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">digital_read</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+
+<div class="warning" markdown="1">
+The IDE will unfortunately error about the lack of a `bake_cake` method (or your equivalent) in the above code.
+This is an expected restriction of the way the IDE checks the syntax of your code.
+
+You can therefore ignore these errors (though you should be careful that the error is one of these and not something else).
+</div>
+
+<h4 id="with-selflock"><code>with self.lock:</code><a class="headerlink" href="#with-selflock" title="Permanent link">&para;</a></h4>
+<p>You'll notice that the code above contains a line that reads:</p>
+<div class="codehilite"><pre><span></span><span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">lock</span><span class="p">:</span>
+</pre></div>
+
+<p>Whenever you call <code>self.command</code>, you need to ensure that it is called within a block of code headed by this <code>with</code> statement.
+This is a tool that makes your code "thread-safe".
+If you're not using threads, then you will still need to use it, but it won't affect the behaviour of your program.</p>
+<h4 id="responses">Responses<a class="headerlink" href="#responses" title="Permanent link">&para;</a></h4>
+<p>The response from your command is returned by the <code>self.command</code> function.
+Remember that it will be a string, so you will need to convert it as necessary.</p>
+<p>If, for example, our cake-baking function on our Ruggeduino responds with the number of cakes that were baked, then we could do this:</p>
+<div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">CustomisedRuggeduino</span><span class="p">(</span><span class="n">Ruggeduino</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">bake_cake</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">lock</span><span class="p">:</span>
+            <span class="n">resp</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">command</span><span class="p">(</span><span class="s2">&quot;c&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">resp</span><span class="p">)</span>
+</pre></div>
+
+<h3 id="step-3-tell-the-robot-to-use-your-extended-class">Step 3: Tell the <code>Robot</code> to use your extended class<a class="headerlink" href="#step-3-tell-the-robot-to-use-your-extended-class" title="Permanent link">&para;</a></h3>
+<p>Now that you've extended the <code>Ruggeduino</code> class to create your <code>CustomisedRuggeduino</code> class,
+ it's time to tell the <code>Robot</code> object about it using the <code>ruggeduino_set_handler_by_fwver</code> function:</p>
+<div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">sr.robot</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="c1"># The class that you wrote in step 2</span>
+<span class="k">class</span> <span class="nc">CustomisedRuggeduino</span><span class="p">(</span><span class="n">Ruggeduino</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">bake_cake</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">lock</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">command</span><span class="p">(</span><span class="s2">&quot;c&quot;</span><span class="p">)</span>
+
+<span class="n">R</span> <span class="o">=</span> <span class="n">Robot</span><span class="o">.</span><span class="n">setup</span><span class="p">()</span>
+
+<span class="c1"># Register the custom class with the Robot object</span>
+<span class="n">R</span><span class="o">.</span><span class="n">ruggeduino_set_handler_by_fwver</span><span class="p">(</span><span class="s2">&quot;SRcustom&quot;</span><span class="p">,</span> <span class="n">CustomisedRuggeduino</span><span class="p">)</span>
+
+<span class="n">R</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+
+<span class="n">R</span><span class="o">.</span><span class="n">wait_start</span><span class="p">()</span>
+
+<span class="c1"># Now you can call your custom function!</span>
+<span class="n">R</span><span class="o">.</span><span class="n">ruggeduinos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">bake_cake</span><span class="p">()</span>
+</pre></div>
+
+<p>You're done!  You can now use your custom cake-baking firmware!</p>
+<h4 id="multiple-ruggeduinos-with-extended-sr-firmwares">Multiple Ruggeduinos with Extended SR Firmwares<a class="headerlink" href="#multiple-ruggeduinos-with-extended-sr-firmwares" title="Permanent link">&para;</a></h4>
+<p>You may wish to use multiple Ruggeduinos with your robot, each supporting a different set of commands.
+There are two ways to go about this.</p>
+<p>You can change the string "SRCustom" in your firmwares to be something different
+ (but make sure you keep the colon that follows it!),
+ and then change the string you pass to <code>ruggeduino_set_handler_by_fwver</code> to suit.
+For example, if you change it to be "CakeBaker" in one of your ruggeduinos,
+ but leave it as "SRCustom" in the other, then your enumeration code would become:</p>
+<div class="codehilite"><pre><span></span><span class="n">R</span><span class="o">.</span><span class="n">ruggeduino_set_handler_by_fwver</span><span class="p">(</span><span class="s2">&quot;SRcustom&quot;</span><span class="p">,</span> <span class="n">CustomisedRuggeduino</span><span class="p">)</span>
+<span class="n">R</span><span class="o">.</span><span class="n">ruggeduino_set_handler_by_fwver</span><span class="p">(</span><span class="s2">&quot;CakeBaker&quot;</span><span class="p">,</span> <span class="n">CakeBakerRuggeduino</span><span class="p">)</span>
+</pre></div>
+
+<p>Alternatively, you can set the handling class using the ID of the Ruggeduino.
+The Ruggeduino IDs are written to the robot log when you run a program on your robot with your Ruggeduino connected.
+Instead of using <code>ruggeduino_set_handler_by_fwver</code>, you use <code>ruggeduino_set_handler_by_id</code>:</p>
+<div class="codehilite"><pre><span></span><span class="n">R</span><span class="o">.</span><span class="n">ruggeduino_set_handler_by_id</span><span class="p">(</span><span class="s2">&quot;752303138333517171B1&quot;</span><span class="p">,</span> <span class="n">CustomisedRuggeduino</span><span class="p">)</span>
+<span class="n">R</span><span class="o">.</span><span class="n">ruggeduino_set_handler_by_id</span><span class="p">(</span><span class="s2">&quot;10231028301928310283&quot;</span><span class="p">,</span> <span class="n">CakeBakerRuggeduino</span><span class="p">)</span>
+</pre></div>
+
+<p>You will then be able to access your ruggeduino using its ID like so:</p>
+<div class="codehilite"><pre><span></span><span class="n">R</span><span class="o">.</span><span class="n">ruggeduinos</span><span class="p">[</span><span class="s2">&quot;752303138333517171B1&quot;</span><span class="p">]</span>
+</pre></div>
+
+<h2 id="completely-custom-firmware"><a href="#completely">Completely custom firmware</a><a class="headerlink" href="#completely-custom-firmware" title="Permanent link">&para;</a></h2>
+<p>When configured correctly, the <code>Robot</code> object will perform absolutely no serial communications with a completely custom firmware.
+We refer to this as <em>ignoring</em> a Ruggeduino.
+To configure a <code>Robot</code> object to ignore a Ruggeduino with custom firmware, you will need to provide it with the Ruggeduino's ID.</p>
+<p>The Ruggeduino ID is a 20 character string of mostly numbers, and is output in the robot log when you run a program on your robot with your
+Ruggeduino connected.</p>
+<p>After calling <code>Robot.setup()</code>, you should call the <code>ruggeduino_ignore_id</code>
+ method of the robot object, with the ID as an argument.
+You'll need the ID later, so it's best to save it into a variable:</p>
+<div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">sr.robot</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="n">RUGGEDUINO_ID</span> <span class="o">=</span> <span class="s2">&quot;752303138333517171B1&quot;</span> <span class="c1"># Replace this with the actual ID</span>
+
+<span class="n">R</span> <span class="o">=</span> <span class="n">Robot</span><span class="o">.</span><span class="n">setup</span><span class="p">()</span>
+
+<span class="n">R</span><span class="o">.</span><span class="n">ruggeduino_ignore_id</span><span class="p">(</span> <span class="n">RUGGEDUINO_ID</span> <span class="p">)</span>
+
+<span class="n">R</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+
+<span class="n">R</span><span class="o">.</span><span class="n">wait_start</span><span class="p">()</span>
+
+<span class="c1"># The rest of your code</span>
+</pre></div>
+
+<p>If you need to communicate with the Ruggeduino firmware, you will need its serial device path.
+This is accessible after the <code>R.init()</code> call through the list of Ruggeduinos:</p>
+<div class="codehilite"><pre><span></span><span class="c1"># ... Robot.setup() ... etc.</span>
+
+<span class="n">R</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+
+<span class="n">ruggeduino_device</span> <span class="o">=</span> <span class="n">R</span><span class="o">.</span><span class="n">ruggeduinos</span><span class="p">[</span><span class="n">RUGGEDUINO_ID</span><span class="p">]</span><span class="o">.</span><span class="n">path</span>
+
+<span class="c1"># Do your Ruggeduino initialisation here if you wish</span>
+
+<span class="n">R</span><span class="o">.</span><span class="n">wait_start</span><span class="p">()</span>
+
+<span class="c1"># The rest of your code</span>
+</pre></div>
+
+<p>You may wish to use pyserial to communicate with the Ruggeduino, in which case you could open it like so:</p>
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">serial</span>
+<span class="kn">from</span> <span class="nn">sr.robot</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="n">RUGGEDUINO_ID</span> <span class="o">=</span> <span class="s2">&quot;752303138333517171B1&quot;</span>
+
+<span class="n">R</span> <span class="o">=</span> <span class="n">Robot</span><span class="o">.</span><span class="n">setup</span><span class="p">()</span>
+<span class="n">R</span><span class="o">.</span><span class="n">ruggeduino_ignore_id</span><span class="p">(</span> <span class="n">RUGGEDUINO_ID</span> <span class="p">)</span>
+<span class="n">R</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+<span class="n">R</span><span class="o">.</span><span class="n">wait_start</span><span class="p">()</span>
+
+<span class="n">ser</span> <span class="o">=</span> <span class="n">serial</span><span class="o">.</span><span class="n">Serial</span><span class="p">(</span> <span class="n">R</span><span class="o">.</span><span class="n">ruggeduinos</span><span class="p">[</span><span class="n">RUGGEDUINO_ID</span><span class="p">]</span><span class="o">.</span><span class="n">path</span> <span class="p">)</span>
+</pre></div>
+
+<p>Refer to the <a href="http://pyserial.sourceforge.net/">pyserial documentation</a> for more information on how to use pyserial.</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../" title="IO (Ruggeduino)" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                IO (Ruggeduino)
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../../servos/" title="Servos" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Servos
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; Student Robotics
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../../../../assets/fonts/font-awesome.css">
+    
+      <a href="https://studentrobotics.org" class="md-footer-social__link fa fa-globe"></a>
+    
+      <a href="https://github.com/srobo" class="md-footer-social__link fa fa-github-alt"></a>
+    
+      <a href="https://twitter.com/studentrobotics" class="md-footer-social__link fa fa-twitter"></a>
+    
+  </div>
+
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../../assets/javascripts/application.b41f3d20.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../../../.."}})</script>
+      
+    
+    
+      
+    
+  </body>
+</html>
