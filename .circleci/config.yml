@@ -15,10 +15,6 @@ jobs:
                 paths:
                     - "/home/circleci/.local/share/virtualenvs"
             - run: pipenv run build
-            - persist_to_workspace:
-                root: .
-                paths:
-                    - site/
 
     deploy:
         docker:
@@ -28,8 +24,6 @@ jobs:
                 fingerprints:
                     - "a1:c7:35:0b:fc:48:19:98:3e:2d:44:08:dd:32:b1:60"
             - checkout
-            - attach_workspace:
-                at: .
             - restore_cache:
                 key: cache-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
             - deploy:
