@@ -11,6 +11,7 @@ mkdocs-material = "*"
 pymdown-extensions = "*"
 mdx-include = "*"
 yamllint = "*"
+mkdocs-markdownextradata-plugin = "*"
 
 [requires]
 python_version = "3.7"
