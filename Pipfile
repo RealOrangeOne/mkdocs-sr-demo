@@ -14,5 +14,5 @@ pymdown-extensions = "*"
 python_version = "3.7"
 
 [scripts]
-serve = "mkdocs serve"
-build = "mkdocs build"
+serve = "mkdocs serve --strict"
+build = "mkdocs build --strict"
