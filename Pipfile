@@ -15,5 +15,5 @@ mdx-include = "*"
 python_version = "3.7"
 
 [scripts]
-serve = "mkdocs serve --strict"
-build = "mkdocs build --strict"
+serve = "mkdocs serve"
+build = "mkdocs build"
