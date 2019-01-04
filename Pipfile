@@ -14,7 +14,7 @@ yamllint = "*"
 mkdocs-markdownextradata-plugin = "*"
 
 [requires]
-python_version = "3.7"
+python_version = "3"
 
 [scripts]
 serve = "mkdocs serve"
