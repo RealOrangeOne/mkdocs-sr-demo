@@ -12,7 +12,7 @@ This repo contains example content from https://github.com/srobo/docs, as testin
 
 ## Requirements
 
-- Python
+- Python (`>=3.5`)
 - `pip`
 - `pipenv` (`pip install pipenv`)
 
